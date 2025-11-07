@@ -8,8 +8,30 @@
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
+    # dev stuff
+    libgccjit
+    cmake
+    jdk25
+    python314
+    nixfmt
+    sqlite
+
+    # commandline utilities
     nano
     tree
+    ani-cli
+    curl
+    doxygen
+    ffmpeg_8
+    imagemagick
+    stow
+    cloc
+
+    # desktop apps
+    polychromatic
+    discord
+    qbittorrent
+    xivlauncher
   ];
 
   home.sessionVariables = {
@@ -64,6 +86,7 @@
     settings = lib.importTOML ./config/starship-config.toml;
   };
 
+  # TODO configure default values
   programs.ssh = {
     enable = true;
 
@@ -92,7 +115,45 @@
     };
   };
 
+  programs.lazygit = {
+    enable = true;
+
+    enableZshIntegration = true;
+  };
+
+  programs.tmux = {
+    enable = true;
+  };
+
+  programs.lf = {
+    enable = true;
+  };
+
+  programs.fzf = {
+    enable = true;
+  };
+
+  programs.aria2 = {
+    enable = true;
+  };
+
   programs.bat = {
+    enable = true;
+  };
+
+  programs.btop = {
+    enable = true;
+  };
+
+  programs.gpg = {
+    enable = true;
+  };
+
+  programs.grep = {
+    enable = true;
+  };
+
+  programs.ripgrep = {
     enable = true;
   };
 
@@ -146,6 +207,7 @@
 
       extensions = with pkgs.vscode-marketplace; [
         esbenp.prettier-vscode
+        aaron-bond.better-comments
         jnoortheen.nix-ide
         tamasfe.even-better-toml
         codezombiech.gitignore
@@ -153,5 +215,13 @@
         pkief.material-icon-theme
       ];
     };
+  };
+
+  programs.obs-studio = {
+    enable = true;
+  };
+
+  programs.mpv = {
+    enable = true;
   };
 }
