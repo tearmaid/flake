@@ -56,6 +56,12 @@
     };
   };
 
+  programs.starship = {
+    enable = true;
+
+    enableZshIntegration = true;
+  };
+
   programs.ssh = {
     enable = true;
 
@@ -139,6 +145,7 @@
       extensions = with pkgs.vscode-marketplace; [
         esbenp.prettier-vscode
         jnoortheen.nix-ide
+        tamasfe.even-better-toml
         codezombiech.gitignore
         mvllow.rose-pine
         pkief.material-icon-theme
