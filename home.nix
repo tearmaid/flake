@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   # Home Manager needs a bit of information about you and the
@@ -60,6 +60,7 @@
     enable = true;
 
     enableZshIntegration = true;
+    settings = lib.importTOML ./config/starship-config.toml;
   };
 
   programs.ssh = {
