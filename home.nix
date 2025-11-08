@@ -33,6 +33,7 @@
     cider-2
     qbittorrent
     xivlauncher
+    prismlauncher
   ];
 
   home.sessionVariables = {
