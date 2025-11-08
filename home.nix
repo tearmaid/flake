@@ -30,6 +30,7 @@
     # desktop apps
     polychromatic
     discord
+    cider-2
     qbittorrent
     xivlauncher
   ];
