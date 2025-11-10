@@ -50,6 +50,7 @@
   boot.kernelModules = [
     "jc24"
     "nct6775"
+    "uinput"
   ];
 
   # Enable OpenGL
@@ -174,6 +175,7 @@
       "wheel"
       "plugdev"
       "openrazer"
+      "input"
     ];
     useDefaultShell = true;
     packages = with pkgs; [
@@ -213,6 +215,7 @@
     #  wget
     openrazer-daemon
     lm_sensors
+    input-remapper # TODO add input-remapper configuration to system config
   ];
 
   fonts.packages = with pkgs; [
@@ -229,6 +232,10 @@
   # };
 
   # List services that you want to enable:
+  # create persistent uinput device
+  services.udev.extraRules = ''
+    KERNEL=="uinput", MODE="0660", GROUP="input", OPTIONS+="static_node=uinput"
+  '';
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;

@@ -1,5 +1,7 @@
 { pkgs, lib, ... }:
 
+# TODO add systemd service for tartarus-pro-joystick-util
+
 {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
@@ -12,7 +14,7 @@
     libgccjit
     cmake
     jdk25
-    python314
+    python3
     nixfmt
     sqlite
 
@@ -212,6 +214,7 @@
       extensions = with pkgs.vscode-marketplace; [
         esbenp.prettier-vscode
         aaron-bond.better-comments
+        ms-python.python
         jnoortheen.nix-ide
         tamasfe.even-better-toml
         codezombiech.gitignore
