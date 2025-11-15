@@ -34,6 +34,7 @@
     discord
     cider-2
     qbittorrent
+    filezilla
     xivlauncher
     prismlauncher
   ];
