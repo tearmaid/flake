@@ -28,6 +28,7 @@
     imagemagick
     stow
     cloc
+    nurl
 
     # desktop apps
     polychromatic
