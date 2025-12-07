@@ -40,6 +40,7 @@
 
     # games
     gamemode
+    gamescope
     mangohud
     xivlauncher
     prismlauncher
