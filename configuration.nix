@@ -16,8 +16,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Use latest kernel.
-  # boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.kernelPackages = pkgs.linuxPackages_6_17; # TODO change back to latest kernel once nvidia OKM is patched for kernel 6.18+
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   environment = {
     # Autocompletion for system packages, see https://home-manager-options.extranix.com/?query=zsh.enablecompletion&release=master
