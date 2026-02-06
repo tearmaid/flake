@@ -241,10 +241,19 @@
   # };
 
   # List services that you want to enable:
-  # create persistent uinput device
-  services.udev.extraRules = ''
-    KERNEL=="uinput", MODE="0660", GROUP="input", OPTIONS+="static_node=uinput"
-  '';
+  services.udev = {
+    enable = true;
+
+    # TODO pulsar web drv broken, wont open configuration screen
+    extraRules = ''
+      # User access for Pulsar X2 Crazylight mouse (through 8K Dongle) (VID 3710, PID 5406)
+      SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", ATTRS{idVendor}=="3710", ATTRS{idProduct}=="5406", MODE="0660", GROUP="input", TAG+="uaccess"
+      KERNEL=="hidraw", ATTRS{idVendor}=="3710", ATTRS{idProduct}=="5406", MODE="0660", GROUP="input" TAG+="uaccess"
+
+      # Create persistent uinput device for Razer Tartarus Pro joystick
+      KERNEL=="uinput", MODE="0660", GROUP="input", OPTIONS+="static_node=uinput"
+    '';
+  };
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
