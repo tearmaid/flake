@@ -36,6 +36,7 @@
     ungoogled-chromium
     polychromatic
     discord
+    signal-desktop
     cider-2
     qbittorrent
     filezilla
